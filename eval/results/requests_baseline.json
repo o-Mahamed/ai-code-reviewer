@@ -1,0 +1,85 @@
+{
+  "total_mutants": 93,
+  "caught": 86,
+  "missed": 7,
+  "recall": 0.925,
+  "baseline_false_positives": 4,
+  "per_bug_class": {
+    "swallowed_exception": {
+      "total": 60,
+      "caught": 53,
+      "recall": 0.883
+    },
+    "mutable_default": {
+      "total": 33,
+      "caught": 33,
+      "recall": 1.0
+    }
+  },
+  "missed_details": [
+    {
+      "file": "__init__.py",
+      "bug_class": "swallowed_exception",
+      "original_line": 51,
+      "description": "Replaced except body with 'pass' at original line 51"
+    },
+    {
+      "file": "__init__.py",
+      "bug_class": "swallowed_exception",
+      "original_line": 56,
+      "description": "Replaced except body with 'pass' at original line 56"
+    },
+    {
+      "file": "__init__.py",
+      "bug_class": "swallowed_exception",
+      "original_line": 132,
+      "description": "Replaced except body with 'pass' at original line 132"
+    },
+    {
+      "file": "adapters.py",
+      "bug_class": "swallowed_exception",
+      "original_line": 64,
+      "description": "Replaced except body with 'pass' at original line 64"
+    },
+    {
+      "file": "help.py",
+      "bug_class": "swallowed_exception",
+      "original_line": 16,
+      "description": "Replaced except body with 'pass' at original line 16"
+    },
+    {
+      "file": "help.py",
+      "bug_class": "swallowed_exception",
+      "original_line": 21,
+      "description": "Replaced except body with 'pass' at original line 21"
+    },
+    {
+      "file": "help.py",
+      "bug_class": "swallowed_exception",
+      "original_line": 26,
+      "description": "Replaced except body with 'pass' at original line 26"
+    }
+  ],
+  "false_positive_details": [
+    {
+      "file": "compat.py",
+      "line": 43,
+      "bug_class": "swallowed_exception"
+    },
+    {
+      "file": "models.py",
+      "line": 1110,
+      "bug_class": "swallowed_exception"
+    },
+    {
+      "file": "sessions.py",
+      "line": 823,
+      "bug_class": "swallowed_exception"
+    },
+    {
+      "file": "utils.py",
+      "line": 178,
+      "bug_class": "swallowed_exception"
+    }
+  ]
+}
