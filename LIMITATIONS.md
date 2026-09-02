@@ -25,3 +25,21 @@ makes the detector fragile instead of trustworthy. This is exactly
 the kind of contextual judgment call ("is this pass intentional given
 the surrounding code and comments?") that the planned LLM review
 layer is suited for, and pure AST pattern-matching isn't.
+
+## Fundamental: single-snapshot review can't see history
+
+Tested directly: ran the LLM reviewer against the exact 7 mutants the
+static analyzer missed (the except-import-fallback ambiguity), with no
+static findings as context. Result: 0/7 caught by the LLM either.
+
+This confirms the ambiguity is fundamental, not a capability gap --
+from a single file snapshot, there is no signal distinguishing "this
+except body was always a no-op" from "this used to do something and
+was silently gutted." Both look identical.
+
+The missing signal is a diff, not a smarter model: real code review
+tools review pull requests, where a before/after comparison would show
+exactly this kind of change. This tool currently reviews whole files
+in isolation rather than diffs -- extending it to take a diff as input
+instead of a full file is the natural next step, and would likely
+close this exact gap for both the static and LLM layers.
